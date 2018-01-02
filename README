@@ -1,0 +1,67 @@
+meta-rpi3
+=========
+
+This layer file contains information on the contents of the
+rpi3 layer for Raspberry Pi 3 B devices and official 7" touchscreen
+
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.yoctoproject.org/poky.git
+  URI: git://git.openembedded.org/meta-openembedded
+  URI: git://git.yoctoproject.org/meta-raspberrypi
+  URI: git://git.yoctoproject.org/meta-raspberrypi
+
+  
+Patches
+=======
+
+Please submit any patches against the rpi3 layer to the maintainer.
+
+Maintainer: Sandeep Gundlupet Raju <grsandeep85@gmail.com>
+
+Table of Contents
+=================
+
+  I. Adding the rpi3 layer to your build
+ II. Misc
+
+
+I. Adding the rpi3 layer to your build
+======================================
+
+In order to use this layer, you need to make the build system has 
+following layers
+
+BBLAYERS ?= " \
+    <path-to-layer>/poky/meta \
+    <path-to-layer>/poky/meta-poky \
+    <path-to-layer>/meta-openembedded/meta-oe \
+    <path-to-layer>/meta-openembedded/meta-multimedia \
+    <path-to-layer>/meta-openembedded/meta-networking \
+    <path-to-layer>/meta-openembedded/meta-python \
+    <path-to-layer>/meta-qt5 \
+    <path-to-layer>/meta-raspberrypi \
+    <path-to-layer>/meta-rpi3 \
+  "
+
+II. Build Instructions
+======================
+
+1. Initialize a build using the 'oe-init-build-env' script in openembedded
+$ source <path-to-layer>/poky/oe-init-build-env
+
+2. Copy the bblayers configuration to build
+$ cp <path-to-layer>/meta-rpi3/conf/bblayers.conf.sample build/conf/bblayers.conf
+
+3. Copy the local configuration configuration to build
+$ cp <path-to-layer>/meta-rpi3/conf/local.conf.sample build/conf/local.conf 
+
+4. Build the Qt image
+$ bitbake core-image-qt5
+
+5. Prepare the SD card image. sdX is the sd card partition disk label
+$ sudo dd if=tmp/deploy/images/raspberrypi3/core-image-qt5-raspberrypi3.rpi-sdimg of=/dev/sdX

@@ -1,0 +1,23 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "7"
+
+SOURCEDIR = "/yocto/rpi3/rpi3-pyro/sources"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+    ${SOURCEDIR}/poky/meta \
+    ${SOURCEDIR}/poky/meta-poky \
+    ${SOURCEDIR}/meta-openembedded/meta-oe \
+    ${SOURCEDIR}/meta-openembedded/meta-multimedia \
+    ${SOURCEDIR}/meta-openembedded/meta-networking \
+    ${SOURCEDIR}/meta-openembedded/meta-python \
+    ${SOURCEDIR}/meta-qt5 \
+    ${SOURCEDIR}/meta-raspberrypi \
+    ${SOURCEDIR}/meta-rpi3 \
+  "
+BBLAYERS_NON_REMOVABLE ?= " \
+    ${SOURCEDIR}/poky/meta \
+"
