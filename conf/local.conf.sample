@@ -237,8 +237,8 @@ PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
 CONF_VERSION = "1"
 
 # Local configuration for meta-rpi3 layer images
-PROJECT_DIR = "/opt/rpi3/project"
-DL_DIR = "${PROJECT_DIR}/downloads"
-SSTATE_DIR = "${PROJECT_DIR}/sstate-cache"
-TMPDIR = "/opt/rpi3/tmp-rpi3-pyro"
+#PROJECT_DIR = "/opt/rpi3/project"
+#DL_DIR = "${PROJECT_DIR}/downloads"
+#SSTATE_DIR = "${PROJECT_DIR}/sstate-cache"
+#TMPDIR = "/opt/rpi3/tmp-rpi3-pyro"
 INHERIT += "rm_work"

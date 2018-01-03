@@ -2,22 +2,22 @@
 # changes incompatibly
 LCONF_VERSION = "7"
 
-SOURCEDIR = "/yocto/rpi3/rpi3-pyro/sources"
+SOURCEDIR := "${@os.path.abspath(os.path.dirname(d.getVar('FILE', True)) + '/../../')}"
 
 BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${SOURCEDIR}/poky/meta \
-    ${SOURCEDIR}/poky/meta-poky \
-    ${SOURCEDIR}/meta-openembedded/meta-oe \
-    ${SOURCEDIR}/meta-openembedded/meta-multimedia \
-    ${SOURCEDIR}/meta-openembedded/meta-networking \
-    ${SOURCEDIR}/meta-openembedded/meta-python \
-    ${SOURCEDIR}/meta-qt5 \
-    ${SOURCEDIR}/meta-raspberrypi \
-    ${SOURCEDIR}/meta-rpi3 \
+    ${SOURCEDIR}/sources/poky/meta \
+    ${SOURCEDIR}/sources/poky/meta-poky \
+    ${SOURCEDIR}/sources/meta-openembedded/meta-oe \
+    ${SOURCEDIR}/sources/meta-openembedded/meta-multimedia \
+    ${SOURCEDIR}/sources/meta-openembedded/meta-networking \
+    ${SOURCEDIR}/sources/meta-openembedded/meta-python \
+    ${SOURCEDIR}/sources/meta-qt5 \
+    ${SOURCEDIR}/sources/meta-raspberrypi \
+    ${SOURCEDIR}/sources/meta-rpi3 \
   "
 BBLAYERS_NON_REMOVABLE ?= " \
-    ${SOURCEDIR}/poky/meta \
+    ${SOURCEDIR}/sources/poky/meta \
 "
