@@ -13,7 +13,7 @@ This layer depends on:
   URI: git://git.yoctoproject.org/poky.git
   URI: git://git.openembedded.org/meta-openembedded
   URI: git://git.yoctoproject.org/meta-raspberrypi
-  URI: git://git.yoctoproject.org/meta-raspberrypi
+  URI: git://git.yoctoproject.org/meta-qt5
 
   
 Patches
@@ -27,7 +27,7 @@ Table of Contents
 =================
 
   I. Adding the rpi3 layer to your build
- II. Misc
+ II. Build Instructions
 
 
 I. Adding the rpi3 layer to your build
